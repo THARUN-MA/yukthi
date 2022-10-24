@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from th.models import userdetail,actordetail,consultdetail
+from th.models import userdetail,actordetail,consultdetail,modeldetail,dancerdetail,singerdetail
 # Create your views here.
 def index(request):
     request.session['usr']=""
@@ -7,26 +7,186 @@ def index(request):
     return render(request,'index.html')
 
 def signup(request):
-    if request.method=="POST":
-        if request.POST['opt']=='usr':
-            if request.POST['your-email']=='admin@gmail.com' or userdetail.objects.filter(email=request.POST['your-email']).exists():
-                return redirect('th:signup')
-            else:
-                userdetail(email=request.POST['your-email'],name=request.POST['full-name'],password=request.POST['password']).save()
-                return redirect('th:login')
-        elif request.POST['opt']=='act':
-            if request.POST['your-email']=='admin@gmail.com' or actordetail.objects.filter(email=request.POST['your-email']).exists():
-                return redirect('th:signup')
-            else:
-                actordetail(email=request.POST['your-email'],name=request.POST['full-name'],password=request.POST['password']).save()
-                return redirect('th:login')
-        elif request.POST['opt']=='con':
-            if request.POST['your-email']=='admin@gmail.com' or consultdetail.objects.filter(email=request.POST['your-email']).exists():
-                return redirect('th:signup')
-            else:
-                consultdetail(email=request.POST['your-email'],name=request.POST['full-name'],password=request.POST['password']).save()
-                return redirect('th:login')
+    # if request.method=="POST":
+    #     if request.FILES['myfile']:
+    #         if not (actordetail.objects.filter(email=request.POST['email']).exists()):
+    #             psp="0"
+    #             try:
+    #                 if request.POST['webseries']:
+    #                     web="1"
+    #             except:
+    #                 web="0"
+    #             try:
+    #                 if request.POST['serial']:
+    #                     ser="1"
+    #             except:
+    #                 ser="0"
+    #             try:
+    #                 if request.POST['movies']:
+    #                     mov="1"
+    #             except:
+    #                 mov="0"
+    #             try:
+    #                 if request.POST['shortmovies']:
+    #                     shmov="1"
+    #             except:
+    #                 shmov="0"
+    #             try:
+    #                 print('TRY')
+    #                 if request.POST['passport']:
+    #                     print('TRYs')
+    #                     psp="1"
+    #             except:
+    #                 print('TRYF')
+    #                 psp="0"
+    #             actordetail(email=request.POST['email'],name=request.POST['name1'],password=request.POST['pass'],dob=request.POST['dob'],age=request.POST['age'],mobile=request.POST['Mobile_Number'],gender=request.POST['Gender'],address=request.POST['Address'],city=request.POST['City'],pin=request.POST['Pin_Code'],state=request.POST['State'],country=request.POST['Country'],webseries=web,serial=ser,movies=mov,shortmovies=shmov,experience=request.POST['experience'],haircolor=request.POST['haircolor'],skincolor=request.POST['skincolor'],passport=psp,profilepic=request.FILES['myfile']).save()
+    #             return redirect('th:login')
     return render(request,'signup.html')
+
+# def actorsignup(request)
+
+def actorsign(request):
+    if request.method=="POST":
+        if request.FILES['myfile']:
+            if not (actordetail.objects.filter(email=request.POST['email']).exists()):
+                psp="0"
+                try:
+                    if request.POST['webseries']:
+                        web="1"
+                except:
+                    web="0"
+                try:
+                    if request.POST['serial']:
+                        ser="1"
+                except:
+                    ser="0"
+                try:
+                    if request.POST['movies']:
+                        mov="1"
+                except:
+                    mov="0"
+                try:
+                    if request.POST['shortmovies']:
+                        shmov="1"
+                except:
+                    shmov="0"
+                try:
+                    print('TRY')
+                    if request.POST['passport']:
+                        print('TRYs')
+                        psp="1"
+                except:
+                    print('TRYF')
+                    psp="0"
+                actordetail(email=request.POST['email'],name=request.POST['name1'],password=request.POST['pass'],dob=request.POST['dob'],age=request.POST['age'],mobile=request.POST['Mobile_Number'],gender=request.POST['Gender'],address=request.POST['Address'],city=request.POST['City'],pin=request.POST['Pin_Code'],state=request.POST['State'],country=request.POST['Country'],webseries=web,serial=ser,movies=mov,shortmovies=shmov,experience=request.POST['experience'],haircolor=request.POST['haircolor'],skincolor=request.POST['skincolor'],passport=psp,profilepic=request.FILES['myfile']).save()
+                return redirect('th:login')
+    return render(request,'actorsign.html')
+
+
+def modelsign(request):
+    if request.method=="POST":
+        if request.FILES['myfile']:
+            if not (modeldetail.objects.filter(email=request.POST['email']).exists()):
+                psp="0"
+                try:
+                    if request.POST['catalog']:
+                        cat="1"
+                except:
+                    cat="0"
+                try:
+                    if request.POST['hoarding']:
+                        hor="1"
+                except:
+                    hor="0"
+                try:
+                    if request.POST['mrmrs']:
+                        mrms="1"
+                except:
+                    mrms="0"
+                try:
+                    if request.POST['des_rmp']:
+                        dsmp="1"
+                except:
+                    dsmp="0"
+                try:
+                    print('TRY')
+                    if request.POST['passport']:
+                        print('TRYs')
+                        psp="1"
+                except:
+                    print('TRYF')
+                    psp="0"
+                modeldetail(email=request.POST['email'],name=request.POST['name1'],password=request.POST['pass'],dob=request.POST['dob'],age=request.POST['age'],mobile=request.POST['Mobile_Number'],gender=request.POST['Gender'],address=request.POST['Address'],city=request.POST['City'],pin=request.POST['Pin_Code'],state=request.POST['State'],country=request.POST['Country'],catalog=cat,hoarding=hor,mrmrs=mrms,des_rmp=dsmp,experience=request.POST['experience'],haircolor=request.POST['haircolor'],skincolor=request.POST['skincolor'],passport=psp,profilepic=request.FILES['myfile']).save()
+                return redirect('th:login')
+    return render(request,'modelsign.html')
+
+
+
+def dancersign(request):
+    if request.method=="POST":
+        if request.FILES['myfile']:
+            if not (dancerdetail.objects.filter(email=request.POST['email']).exists()):
+                psp="0"
+                try:
+                    if request.POST['bara']:
+                        bar="1"
+                except:
+                    bar="0"
+                try:
+                    if request.POST['free']:
+                        fre="1"
+                except:
+                    fre="0"
+                try:
+                    if request.POST['side']:
+                        sid="1"
+                except:
+                    sid="0"
+                try:
+                    if request.POST['dsr']:
+                        ds="1"
+                except:
+                    ds="0"
+                try:
+                    print('TRY')
+                    if request.POST['passport']:
+                        print('TRYs')
+                        psp="1"
+                except:
+                    print('TRYF')
+                    psp="0"
+                dancerdetail(email=request.POST['email'],name=request.POST['name1'],password=request.POST['pass'],dob=request.POST['dob'],age=request.POST['age'],mobile=request.POST['Mobile_Number'],gender=request.POST['Gender'],address=request.POST['Address'],city=request.POST['City'],pin=request.POST['Pin_Code'],state=request.POST['State'],country=request.POST['Country'],barathanatyam=bar,freestyle=fre,sidedancer=sid,danceshow=ds,experience=request.POST['experience'],haircolor=request.POST['haircolor'],skincolor=request.POST['skincolor'],passport=psp,profilepic=request.FILES['myfile']).save()
+                return redirect('th:login')
+    return render(request,'dancersign.html')
+
+
+def singersign(request):
+    if request.method=="POST":
+        if request.FILES['myfile']:
+            if not (singerdetail.objects.filter(email=request.POST['email']).exists()):
+                psp="0"
+                try:
+                    if request.POST['movie']:
+                        mov="1"
+                except:
+                    mov="0"
+                try:
+                    if request.POST['serial']:
+                        ser="1"
+                except:
+                    ser="0"
+                try:
+                    print('TRY')
+                    if request.POST['passport']:
+                        print('TRYs')
+                        psp="1"
+                except:
+                    print('TRYF')
+                    psp="0"
+                singerdetail(email=request.POST['email'],name=request.POST['name1'],password=request.POST['pass'],dob=request.POST['dob'],age=request.POST['age'],mobile=request.POST['Mobile_Number'],gender=request.POST['Gender'],address=request.POST['Address'],city=request.POST['City'],pin=request.POST['Pin_Code'],state=request.POST['State'],country=request.POST['Country'],movie=mov,serial=ser,experience=request.POST['experience'],haircolor=request.POST['haircolor'],skincolor=request.POST['skincolor'],passport=psp,profilepic=request.FILES['myfile']).save()
+                return redirect('th:login')
+    return render(request,'singersign.html')
+
 
 def login(request):
     if request.method=="POST":

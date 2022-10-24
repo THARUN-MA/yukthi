@@ -1,4 +1,4 @@
-body {
+/* body {
 	margin:  0;
 }
 .page-content {
@@ -132,26 +132,49 @@ body {
 	transform: translateX(-50%);
 	position: absolute;
 }
-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input::-webkit-input-placeholder {
   color: #999;
   font-size: 16px;
 }
-input::-moz-placeholder { /* Firefox 19+ */
+input::-moz-placeholder {
   color: #999;
   font-size: 16px;
 }
-input:-ms-input-placeholder { /* IE 10+ */
+input:-ms-input-placeholder {
   color: #999;
   font-size: 16px;
 }
-input:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder {
   color: #999;
   font-size: 16px;
 }
 
-/* Responsive */
 @media screen and (max-width: 767px) {
 	.form-v5-content {
 	    margin: 175px 20px;
 	}
+} */
+h3{
+  font-family: Calibri;
+  font-size: 25pt;
+  font-style: normal;
+  font-weight: bold;
+  color:SlateBlue;
+  text-align: center;
+  text-decoration: underline
+}
+
+table{
+  font-family: Calibri;
+  color:white;
+  font-size: 11pt;
+  font-style: normal;
+  font-weight: bold;
+  text-align:;
+  background-color: SlateBlue;
+  border-collapse: collapse;
+  border: 2px solid navy
+}
+table.inner{
+  border: 0px
 }
