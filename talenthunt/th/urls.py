@@ -15,4 +15,15 @@ urlpatterns=[
     url('singersign/',views.singersign,name='singersign'),
     url('dancersign/',views.dancersign,name='dancersign'),
     url('modelsign/',views.modelsign,name='modelsign'),
+    url('consultsign/',views.consultsign,name='consultsign'),
+    url('enrolladd/(?P<value>\w+)$',views.enrolladd,name='enrolladd'),
+    url('createaudtion/',views.createaudtion,name='createaudtion'),
+    url('manageaudtion/',views.manageaudtion,name='manageaudtion'),
+    url('createsinger/',views.createsinger,name='createsinger'),
+    url('createactor/',views.createactor,name='createactor'),
+    url('createmodel/',views.createmodel,name='createmodel'),
+    url('createdancer/',views.createdancer,name='createdancer'),
+    url('enroll/(?P<value>\w+)$',views.enroll,name='enroll'),
+    url('manage2/(?P<value>\w+)$',views.manage2,name='manage2'),
+
 ]

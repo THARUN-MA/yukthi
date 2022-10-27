@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Manage Auditions</h1>
+    <a href="{% url "th:logout"%}">Logout</a><br><br><br>
+    <a href="{% url "th:consultdashboard"%}">Home</a><br><br><br>
+    {% if actor %}
+    <h3>Actors</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Manage Here</th>
+      </tr>
+      {% for i in actor %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td><a href="{% url "th:manage2" value=i.aid%}"><button>Manage</button></a></td>
+      </tr>
+      {% endfor%}
+    </table>
+    {% endif %}
+
+    {% if dancer %}
+    <h3>Dancers</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Manage Here</th>
+      </tr>
+      {% for i in dancer %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td><a href="{% url "th:manage2" value=i.aid%}"><button>Manage</button></a></td>
+      </tr>
+      {% endfor%}
+    </table>
+    {% endif %}
+
+        {% if model %}
+        <h3>Models</h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Manage Here</th>
+          </tr>
+          {% for i in model %}
+          <tr>
+            <td>{{i.name}}</td>
+            <td><a href="{% url "th:manage2" value=i.aid%}"><button>Manage</button></a></td>
+          </tr>
+          {% endfor%}
+        </table>
+        {% endif %}
+
+            {% if singer %}
+            <h3>Singers</h3>
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Manage Here</th>
+              </tr>
+              {% for i in singer %}
+              <tr>
+                <td>{{i.name}}</td>
+                <td><a href="{% url "th:manage2" value=i.aid%}"><button>Manage</button></a></td>
+              </tr>
+              {% endfor%}
+            </table>
+            {% endif %}
+      </body>
+</html>

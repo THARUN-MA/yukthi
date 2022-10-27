@@ -6,11 +6,11 @@
   </head>
   <body>
     <a href="{% url "th:logout"%}">Logout</a><br><br>
-    <h1>Welcome Actor</h1>
+    <h1>Welcome Singer</h1>
 <br><br>
 
       {% if data1 %}
-      <br><h1>Webseries</h1><br>
+      <br><h1>Movie Track</h1><br>
       <table>
       {% for i in data1 %}
       <tr>
@@ -22,7 +22,7 @@
       {% endif %}
       </table>
       {% if data2 %}
-      <br><h1>Serial</h1><br>
+      <br><h1>Serial Track</h1><br>
       <table>
       {% for i in data2 %}
       <tr>
@@ -33,29 +33,6 @@
       </table>
       {% endif %}
       </table>
-      {% if data3 %}
-      <br><h1>Movies</h1><br>
-      <table>
-      {% for i in data3 %}
-      <tr>
-        <td>{{i.name}}</td>
-        <td><a href="{% url "th:enroll" value=i.aid%}"><button>Enroll</button></a></td>
-      </tr>
-      {% endfor %}
-      </table>
-      {% endif %}
-
-      {% if data4 %}
-      <br><h1>Webseries</h1><br>
-      <table>
-      {% for i in data4 %}
-      <tr>
-        <td>{{i.name}}</td>
-        <td><a href="{% url "th:enroll" value=i.aid%}"><button>Enroll</button></a></td>
-      </tr>
-      {% endfor %}
-      </table>
-      {% endif %}
 
   </body>
 </html>

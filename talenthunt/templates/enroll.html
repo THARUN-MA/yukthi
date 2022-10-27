@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if enr %}
+    <button disabled>Enrolled</button>
+    {% else %}
+    <a href="{% url "th:enrolladd" value=data.aid %}"><button>Enroll</button></a>
+
+<form method="post" enctype="multipart/form-data">
+  <label for="">Upload the File</label>
+  <input type="file" class="form-control" name="myfile" required><br><br><br>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>{{data.name}}</td>
+      </tr>
+      <tr>
+        <tr>
+          <td>Audition  ID</td>
+          <td><input type="text" name="did" value="{{data.aid}}" readonly></td>
+        </tr>
+        <tr>
+        <td>Description</td>
+        <td>{{data.desc}}</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>{{data.desc}}</td>
+      </tr>
+    </table>
+
+      {% csrf_token %}
+
+      <input type="submit" name="" value="Submit">
+    </form>
+    {% endif %}
+  </body>
+</html>

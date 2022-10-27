@@ -1,2 +1,14 @@
-<h1>Welcome Consultant</h1>
-<a href="{% url "th:logout"%}">Logout</a>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Welcome Consultant</h1>
+    <a href="{% url "th:logout"%}">Logout</a><br><br><br>
+    <a href="{% url "th:createaudtion"%}"><button type="button" name="button">Create Auditions</button></a>
+    <a href="{% url "th:manageaudtion"%}"><button type="button" name="button">Manage Auditions</button></a>
+
+  </body>
+</html>

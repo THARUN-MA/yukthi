@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Create Model Auditions</h1>
+    <a href="{% url "th:logout"%}">Logout</a><br><br><br>
+    <a href="{% url "th:consultdashboard"%}">Home</a><br><br><br>
+
+    <form method="post">
+      {% csrf_token %}
+      <label for="">Name</label>
+      <input type="text" name="name" value="" required><br><br>
+      <label for="">Description</label>
+      <textarea name="desc" rows="8" cols="80" required></textarea><br><br>
+      Catalog Shoot
+      <input type="checkbox" name="catalog" value="Drawing" />
+      Hoardings
+      <input type="checkbox" name="hoarding" value="Singing" />
+      Mr/Mrs India Contest
+      <input type="checkbox" name="mrmrs" value="Dancing" />
+      Designer Ramp
+      <input type="checkbox" name="des_rmp" value="Cooking" />
+      <br />  
+      <input type="submit" name="" value="Submit">
+    </form>
+
+  </body>
+</html>

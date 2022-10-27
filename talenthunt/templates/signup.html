@@ -30,8 +30,8 @@
 				</li>
 			</ul>
 			<form >
-				<a href="{% url "index"%}"><button><button>Home</button></a>&nbsp
-				<a href="{% url "th:login"%}"><butto><button>LOGIN</button></a>
+				<button><a href="{% url "index"%}">Home</a></button>&nbsp
+				<button><a href="{% url "th:login"%}">LOGIN</a></button>
 			</form>
 		</div>
 	</nav>
@@ -40,6 +40,7 @@
 			<form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 		<button><a href="{% url "th:actorsign"%}">Acting</a></button>
+		<button><a href="{% url "th:consultsign"%}">Cosultant</a></button>
 		<button><a href="{% url "th:singersign"%}">Singing</a></button>
 		<button><a href="{% url "th:dancersign"%}">Dancing</a></button>
 		<button><a href="{% url "th:modelsign"%}">Modeling </a></button>

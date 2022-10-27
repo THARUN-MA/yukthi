@@ -5,15 +5,14 @@
     <title></title>
   </head>
   <body><br><br><br><br>
-  <h3>Dancer REGISTRATION FORM</h3>
-  <form method="post" enctype="multipart/form-data">
+  <h3>Consultant REGISTRATION FORM</h3>
+  <form method="post">
   {% csrf_token %}
 
   <table align="center" cellpadding = "10">
 
   <tr>
   <td>NAME</td>
-
   <td>
   	<input type="text" name="name1"  placeholder="Your Name" required>
   (max 30 characters a-z and A-Z)
@@ -21,24 +20,14 @@
   </tr>
 
   <tr>
-  	<td>Profile Picture</td>
-  	<td><input type="file" class="form-control" name="myfile" required>	</td>
-
-  </tr>
-
-  <tr>
-  <td>DATE OF BIRTH</td>
+  <td>Company Name</td>
 
   <td>
-  	<input type="date" name="dob" value="" required>
-
-
+  	<input type="text" name="cmpname"  placeholder="Your Name" required>
+  (max 30 characters a-z and A-Z)
   </td>
   </tr>
-  <tr>
-  	<td>AGE</td>
-  	<td><input type="number" name="age" value="" required></td>
-  </tr>
+
 
   <tr>
   <td>EMAIL ID</td>
@@ -59,14 +48,7 @@
   </td>
   </tr>
 
-  <tr>
-  <td>GENDER</td>
-  <td>
-  <input type="radio" name="Gender" value="male" checked/>Male
-   <input type="radio" name="Gender" value="female" />Female
-   <input type="radio" name="Gender" value="others" />Others
-  </td>
-  </tr>
+
 
   <tr>
   <td>ADDRESS <br /><br /><br /></td>
@@ -100,47 +82,7 @@
   </tr>
 
 
-  <tr>
-  <td>Dancing </td>
 
-  <td>
-  Bharathanatyam
-  <input type="checkbox" name="bara" value="Drawing" />
-  Free Style
-  <input type="checkbox" name="free" value="Singing" />
-  Side Dancer
-  <input type="checkbox" name="side" value="Dancing" />
-  Dance Shows
-  <input type="checkbox" name="dsr" value="Cooking" />
-  <br />
-
-  </td>
-  </tr>
-
-
-
-  <tr>
-  <td>Experience <br /><br /><br /></td>
-  <td><textarea name="experience" rows="4" cols="30" placeholder="NA if no experience" required></textarea></td>
-  </tr>
-
-  <tr>
-  <td>Hair Color </td>
-  <td><input type="color" name="haircolor" value=""></td>
-
-  </tr>
-
-  <tr>
-  <td>Skin Color </td>
-  <td><input type="color" name="skincolor" value=""></td>
-
-  </tr>
-
-  <tr>
-  <td>Passport</td>
-  <td><input type="checkbox" name="passport" value="asd"></td>
-
-  </tr>
 
 
   <tr>
