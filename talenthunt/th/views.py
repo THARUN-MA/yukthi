@@ -270,7 +270,23 @@ def actordashboard(request):
         if a[0].shortmovies=="1":
             context['data4']=createactord.objects.filter(shortmovies="1")
         return render(request,'actordashboard.html',context)
-    elif (request.session['usr'] and request.session['usrtype']=='dnc'):
+    else:
+        return redirect('th:login')
+
+def singerdashboard(request):
+    if (request.session['usr'] and request.session['usrtype']=='sng'):
+        context={}
+        a=singerdetail.objects.filter(email=request.session['usr'])
+        if a[0].movie=="1":
+            context['data1']=createsingerd.objects.filter(movie="1")
+        if a[0].serial=="1":
+            context['data2']=createsingerd.objects.filter(serial="1")
+        return render(request,'singerdashboard.html',context)
+    else:
+        return redirect('th:login')
+
+def dancerdashboard(request):
+    if (request.session['usr'] and request.session['usrtype']=='dnc'):
         context={}
         a=dancerdetail.objects.filter(email=request.session['usr'])
         if a[0].barathanatyam=="1":
@@ -282,7 +298,11 @@ def actordashboard(request):
         if a[0].danceshow=="1":
             context['data4']=createdancerd.objects.filter(danceshow="1")
         return render(request,'dancerdashboard.html',context)
-    elif (request.session['usr'] and request.session['usrtype']=='mdl'):
+    else:
+        return redirect('th:login')
+
+def modeldashboard(request):
+    if (request.session['usr'] and request.session['usrtype']=='mdl'):
         context={}
         a=modeldetail.objects.filter(email=request.session['usr'])
         if a[0].catalog=="1":
@@ -294,16 +314,10 @@ def actordashboard(request):
         if a[0].des_rmp=="1":
             context['data4']=createmodeld.objects.filter(des_rmp="1")
         return render(request,'modeldashboard.html',context)
-    elif (request.session['usr'] and request.session['usrtype']=='sng'):
-        context={}
-        a=singerdetail.objects.filter(email=request.session['usr'])
-        if a[0].movie=="1":
-            context['data1']=createsingerd.objects.filter(movie="1")
-        if a[0].serial=="1":
-            context['data2']=createsingerd.objects.filter(serial="1")
-        return render(request,'singerdashboard.html',context)
     else:
         return redirect('th:login')
+
+
 
 def enroll(request,value=None):
     if request.session['usr']:
