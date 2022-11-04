@@ -3,11 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    {% load static %}
+    <link href="{%static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Talent Hunt</a>
+      <form class="form-inline">
+
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <a href="{% url "th:consultdashboard"%}">Home</a>
+        </button>&nbsp
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <a href="{% url "th:logout"%}">Logout</a>
+        </button>
+      </form>
+    </nav>
   </head>
-  <body>
-    <h1>Create Auditions</h1>
-    <a href="{% url "th:logout"%}">Logout</a><br><br><br>
-    <a href="{% url "th:consultdashboard"%}">Home</a><br><br><br>
+  <body><br><br>
+    <h1>Create Auditions</h1><br><br>
     <a href="{% url "th:createactor"%}"><button>Actor</button></a>
     <a href="{% url "th:createmodel"%}"><button>Model</button></a>
     <a href="{% url "th:createdancer"%}"><button>Dancer</button></a>

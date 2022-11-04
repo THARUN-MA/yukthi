@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+{% load static %}
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="{%static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Talent Hunt</a>
+      <form class="form-inline">
+
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <a href="{% url "index"%}">Home</a>
+        </button>&nbsp
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <a href="{% url "th:signup"%}">Signup</a>
+        </button>&nbsp
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <a href="{% url "th:login"%}">Login</a>
+        </button>
+      </form>
+    </nav>
   </head>
   <body><br><br><br><br>
   <h3>Consultant REGISTRATION FORM</h3>

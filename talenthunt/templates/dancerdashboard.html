@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    {% load static %}
+    <link href="{%static "css/bootstrap.min.css" %}" rel="stylesheet">
   </head>
   <body>
     <a href="{% url "th:logout"%}">Logout</a><br><br>

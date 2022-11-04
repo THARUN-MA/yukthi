@@ -3,12 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    {% load static %}
+    <link href="{%static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Talent Hunt</a>
+      <form class="form-inline">
+
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <a href="{% url "th:logout"%}">Logout</a>
+        </button>
+      </form>
+    </nav>
   </head>
   <body>
-    {% if enr %}
-    <button disabled>Enrolled</button>
+    {% if enr %}<br><br>
+    <button disabled>Enrolled</button><br><br><br>
+    You are Already enrolled to this Auditions.
     {% else %}
-    <a href="{% url "th:enrolladd" value=data.aid %}"><button>Enroll</button></a>
+    <!-- <a href="{% url "th:enrolladd" value=data.aid %}"><button>Enroll</button></a> -->
 
 <form method="post" enctype="multipart/form-data">
   <label for="">Upload the File</label>
@@ -27,10 +39,7 @@
         <td>Description</td>
         <td>{{data.desc}}</td>
       </tr>
-      <tr>
-        <td>Description</td>
-        <td>{{data.desc}}</td>
-      </tr>
+
     </table>
 
       {% csrf_token %}
